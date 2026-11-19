@@ -1,5 +1,4 @@
 import streamlit as st
-
 st.set_page_config(
     page_title="LLM",
     layout="centered"
@@ -67,3 +66,13 @@ else:
         if mode in ["Evaluate Answers", "Improve answers"] and (not question.strip() or not answer.strip()):
             st.warning("please enter a valid Question and Answer")
             st.stop()
+            topics = "Topic is" + topic +"Difficulty is" +level
+            if mode == "Generate Question" :
+                task = "Generate" + str(count) +"Frequently asked Interview question 3 situation based questions as well as 2 theory questions"
+            elif mode == "Generate Code Questions":
+                task="Generate" +str(count) + "Frequently asked Coding or technical questions for the topics"+ topic + "and give me the hints with accurate performance."
+            elif mode == "Evaluate Answers":
+                task = "Question:"+ question + "Answer: "+answer+"Evaluate the answer based on the question and identify the drawbacks ."
+            elif mode == "Improve Answer" :
+                task = "Question:" = question + "Answer: " + answer + "Improve the answer based on the result and highligth the important points."
+            
